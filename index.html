@@ -1,39 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ryota Karube</title>
+
+  <style>
+    :root {
+      --navy: #0b1f4d;
+      --blue: #2563eb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--navy), #1e3a8a);
+      color: white;
+      padding: 64px 20px 48px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin: 0 0 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      opacity: 0.95;
+      margin-bottom: 20px;
+    }
+
+    .links a {
+      color: white;
+      margin-right: 16px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.45);
+    }
+
+    main {
+      padding: 40px 0;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    h2 {
+      color: var(--navy);
+      margin-top: 0;
+      font-size: 1.45rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      margin-bottom: 4px;
+      color: var(--navy);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eef2ff;
+      color: #1e3a8a;
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin: 4px 4px 4px 0;
+      font-size: 0.9rem;
+    }
+
+    .item {
+      margin-bottom: 18px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--blue);
+    }
+
+    iframe {
+      width: 100%;
+      height: 380px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: white;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 28px 20px 40px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Ryota Karube</h1>
+  <header>
+    <div class="container">
+      <h1>Ryota Karube</h1>
+      <div class="subtitle">
+        Second-year Ph.D. student, University of Tsukuba<br>
+        Urban Climate · Urban Meteorology · GIScience · Digital Twin
+      </div>
+      <div class="links">
+        <a href="https://orcid.org/0000-0002-1142-3768" target="_blank" rel="noopener noreferrer">ORCID</a>
+        <a href="https://www.linkedin.com/in/ryota-karube/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/ryota_karube" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+      </div>
+    </div>
+  </header>
 
-  <p>Second-year Ph.D. student, University of Tsukuba</p>
-  <p>Urban climate, urban meteorology, and GIScience</p>
+  <main class="container">
+    <section>
+      <h2>About</h2>
+      <p>
+        I am a second-year Ph.D. student in the Doctoral Program in Geosciences at the University of Tsukuba,
+        working on urban climate, urban meteorology, and geospatial information science.
+        My current research focuses on enriching urban digital twins through high-resolution urban climate
+        simulations for heat-risk assessment and the optimization of heat adaptation strategies.
+      </p>
+    </section>
 
-  <h2>Mt. Tsukuba Project</h2>
+    <section>
+      <h2>Research Interests</h2>
+      <span class="tag">Urban Climate</span>
+      <span class="tag">Urban Meteorology</span>
+      <span class="tag">GIScience</span>
+      <span class="tag">Digital Twin</span>
+      <span class="tag">Heat Mitigation</span>
+      <span class="tag">Local Climate Zones</span>
+      <span class="tag">Meteorological Observation</span>
+      <span class="tag">Boundary-Layer Meteorology</span>
+      <span class="tag">Biometeorology</span>
+    </section>
 
-  <p>
-    Current meteorological observation summary from the Mt. Tsukuba Project.
-  </p>
+    <section>
+      <h2>Education</h2>
+      <div class="item">
+        <h3>Ph.D. in Science</h3>
+        <div class="meta">University of Tsukuba, Apr. 2025 – Mar. 2028 expected</div>
+        <p>
+          Topic: Enrichment of Urban Digital Twin through Urban Climate Model Simulations
+          for Heat Risk Assessment and Optimization of Heat Adaptation Strategies.
+        </p>
+      </div>
+      <div class="item">
+        <h3>Master of Science</h3>
+        <div class="meta">University of Tsukuba, Mar. 2024</div>
+        <p>Master’s thesis: Validation of the microclimate model ENVI-met.</p>
+      </div>
+      <div class="item">
+        <h3>Bachelor of Science</h3>
+        <div class="meta">University of Tsukuba, Mar. 2022</div>
+        <p>Graduation thesis: Assessment of heat mitigation strategies at city-block scale in Tokyo.</p>
+      </div>
+    </section>
 
-  <iframe
-    src="https://www.geoenv.tsukuba.ac.jp/~kusakaken/mt-tsukuba/summary_utf8.html"
-    width="100%"
-    height="350"
-    style="border: 1px solid #ccc; border-radius: 6px;">
-  </iframe>
+    <section>
+      <h2>Research Experience</h2>
+      <div class="grid">
+        <div>
+          <h3>Research Intern</h3>
+          <div class="meta">GATE Institute, Sofia University · Jul. 2025 – present</div>
+          <p>Urban climate modelling and digital twin applications for Sofia, Bulgaria.</p>
+        </div>
+        <div>
+          <h3>Graduate Research Assistant</h3>
+          <div class="meta">Center for Computational Sciences, University of Tsukuba · Apr. 2025 – present</div>
+          <p>Large-eddy simulation, urban airflow, heat-risk atlas development, and meteorological data management.</p>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    <a href="https://www.geoenv.tsukuba.ac.jp/~kusakaken/mt-tsukuba/summary_utf8.html" target="_blank" rel="noopener noreferrer">
-      Open the original page
-    </a>
-  </p>
+    <section>
+      <h2>Selected Publications</h2>
+      <div class="item">
+        <p>
+          <strong>Karube, R.</strong>, L. L. Vitanova, E. Shirinyan, T. Sato,
+          D. Petrova-Antonova, and H. Kusaka, 2026:
+          WRF–City-LES Modelling of the Urban Thermal Environment in Sofia.
+          <em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, accepted.
+        </p>
+      </div>
+      <div class="item">
+        <p>
+          Vitanova, L. L., K. Fujiwara, <strong>R. Karube</strong>, E. Shirinyan,
+          Y. Azegami, Q.-V. Doan, H. Kusaka, D. Petrova-Antonova, and S. Ilieva, 2026:
+          Evaluating High-Resolution Geospatial Data for Urban Microclimate Simulations.
+          <em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, accepted.
+        </p>
+      </div>
+      <div class="item">
+        <p>
+          Vitanova, L. L., D. Pavlov, T. Trendafilova, <strong>R. Karube</strong>,
+          K. Nakamura, A. Zabuska, Q.-V. Doan, D. Petrova-Antonova, and S. Ilieva, 2026:
+          Future Building Energy Atlas of Sofia City.
+          <em>ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, accepted.
+        </p>
+      </div>
+    </section>
 
-  <h2>Contact</h2>
-  <p>
-    Email: karube.ryota.aw [at] alumni.tsukuba.ac.jp<br>
-    Please replace [at] with @.
-  </p>
+    <section>
+      <h2>Awards and Fellowships</h2>
+      <ul>
+        <li>JST SPRING Fellowship, Apr. 2025 – Mar. 2028</li>
+        <li>Student Contest Best Presentation Award, Japanese Society of Biometeorology, 2023</li>
+        <li>MEIKEIKAI Award, University of Tsukuba, 2022</li>
+        <li>CSIS DAYS 2021 Joint Research Presentation Excellence Award, 2021</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="grid">
+        <div>
+          <h3>GIS</h3>
+          <p>ArcGIS Pro, ArcMap, QGIS</p>
+        </div>
+        <div>
+          <h3>Meteorological Modelling</h3>
+          <p>ENVI-met, City-LES, PALM, WRF</p>
+        </div>
+        <div>
+          <h3>Programming</h3>
+          <p>Python, Fortran, Shell Scripting</p>
+        </div>
+        <div>
+          <h3>Other</h3>
+          <p>LaTeX, GMT</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Mt. Tsukuba Project</h2>
+      <p>
+        Current meteorological observation summary from the Mt. Tsukuba Project.
+      </p>
+      <iframe
+        src="https://www.geoenv.tsukuba.ac.jp/~kusakaken/mt-tsukuba/summary_utf8.html">
+      </iframe>
+      <p>
+        <a href="https://www.geoenv.tsukuba.ac.jp/~kusakaken/mt-tsukuba/summary_utf8.html"
+           target="_blank" rel="noopener noreferrer">
+          Open the original page
+        </a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>
+        Email: karube.ryota.aw [at] alumni.tsukuba.ac.jp<br>
+        Please replace [at] with @.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Last updated: July 2026
+  </footer>
 </body>
 </html>
