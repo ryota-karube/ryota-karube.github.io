@@ -3,202 +3,650 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ryota KARUBE (PhD student, University of Tsukuba)</title>
+  <meta name="description" content="Ryota Karube — Ph.D. Student at the University of Tsukuba and Research Intern at the GATE Institute, Sofia University. Urban climate, urban meteorology, and GIScience." />
+  <title>Ryota Karube | Urban Climate & GIScience</title>
 
   <style>
     :root {
-      --navy: #0b1f4d;
-      --blue: #2563eb;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --bg: #f8fafc;
+      --navy: #0a2342;
+      --navy-2: #163a63;
+      --blue: #2d6cdf;
+      --sky: #eaf3ff;
+      --text: #172033;
+      --muted: #68748a;
+      --bg: #f5f8fc;
       --card: #ffffff;
-      --border: #e5e7eb;
+      --line: #dfe7f1;
+      --soft: #f9fbfe;
+      --shadow: 0 18px 48px rgba(19, 45, 77, 0.08);
+      --radius: 22px;
+      --max: 1120px;
     }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top right, rgba(45,108,223,0.10), transparent 34rem),
+        var(--bg);
       line-height: 1.7;
-    }
-
-    header {
-      background: linear-gradient(135deg, var(--navy), #1e3a8a);
-      color: white;
-      padding: 64px 20px 48px;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    h1 {
-      font-size: 2.8rem;
-      margin: 0 0 8px;
-      letter-spacing: 0.02em;
-    }
-
-    .subtitle {
-      font-size: 1.15rem;
-      opacity: 0.95;
-      margin-bottom: 20px;
-    }
-
-    .links a {
-      color: white;
-      margin-right: 16px;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.45);
-    }
-
-    main {
-      padding: 40px 0;
-    }
-
-    section {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px;
-      margin-bottom: 24px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
-    }
-
-    h2 {
-      color: var(--navy);
-      margin-top: 0;
-      font-size: 1.45rem;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 8px;
-    }
-
-    h3 {
-      margin-bottom: 4px;
-      color: var(--navy);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #eef2ff;
-      color: #1e3a8a;
-      padding: 5px 10px;
-      border-radius: 999px;
-      margin: 4px 4px 4px 0;
-      font-size: 0.9rem;
-    }
-
-    .item {
-      margin-bottom: 18px;
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: 0.95rem;
     }
 
     a {
       color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(245,248,252,0.88);
+      border-bottom: 1px solid rgba(223,231,241,0.9);
+    }
+
+    .nav-inner {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.92rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    header {
+      padding: 88px 0 56px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-intro {
+      margin: 24px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .roles {
+      display: grid;
+      gap: 12px;
+      margin-top: 30px;
+      max-width: 760px;
+    }
+
+    .role {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(19,45,77,0.04);
+    }
+
+    .role-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--blue);
+      box-shadow: 0 0 0 6px var(--sky);
+      flex: 0 0 auto;
+    }
+
+    .role strong {
+      color: var(--navy);
+      display: block;
+    }
+
+    .role span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .profile-card {
+      background: linear-gradient(145deg, var(--navy), var(--navy-2));
+      color: white;
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 28px 70px rgba(10,35,66,0.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -80px;
+      top: -80px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .profile-card h2 {
+      color: white;
+      margin: 0 0 12px;
+      border: 0;
+      padding: 0;
+      font-size: 1.1rem;
+    }
+
+    .profile-card p {
+      color: rgba(255,255,255,0.78);
+      margin: 0 0 22px;
+    }
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .profile-links a {
+      color: white;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+    }
+
+    main { padding-bottom: 72px; }
+
+    section {
+      margin: 26px 0;
+      padding: 34px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      scroll-margin-top: 88px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: 1.55rem;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    .section-kicker {
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .research-grid,
+    .skills-grid,
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .research-card,
+    .skill-card,
+    .mini-card {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .research-card h3,
+    .skill-card h3,
+    .mini-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .research-card p,
+    .skill-card p,
+    .mini-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--sky);
+      color: var(--navy-2);
+      border: 1px solid #d4e5fb;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .timeline {
+      position: relative;
+      margin-left: 8px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--line);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 34px;
+      margin-bottom: 24px;
+    }
+
+    .timeline-item:last-child { margin-bottom: 0; }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: white;
+      border: 4px solid var(--blue);
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 3px;
+      color: var(--navy);
+      font-size: 1.04rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .timeline-item p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .publication {
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .publication:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .pub-title {
+      font-size: 1.03rem;
+      font-weight: 800;
+      line-height: 1.45;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .pub-authors,
+    .pub-journal {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .pub-journal { margin-top: 3px; }
+
+    .pub-actions {
+      margin-top: 9px;
+    }
+
+    .button-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--sky);
+      border: 1px solid #d4e5fb;
+      font-size: 0.84rem;
+      font-weight: 800;
+    }
+
+    .presentation {
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .presentation:first-of-type { border-top: 0; padding-top: 0; }
+
+    .presentation strong {
+      color: var(--navy);
+    }
+
+    ul.clean {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    ul.clean li {
+      margin: 9px 0;
     }
 
     iframe {
       width: 100%;
-      height: 380px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      height: 420px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
       background: white;
     }
 
+    .contact-box {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
     footer {
+      padding: 28px 20px 44px;
       text-align: center;
       color: var(--muted);
-      padding: 28px 20px 40px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .profile-card { max-width: 620px; }
+      .research-grid,
+      .skills-grid,
+      .mini-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 24px, var(--max)); }
+      header { padding: 58px 0 34px; }
+      section { padding: 24px 20px; border-radius: 18px; }
+      .research-grid,
+      .skills-grid,
+      .mini-grid { grid-template-columns: 1fr; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      .role { align-items: flex-start; }
+      h1 { font-size: clamp(2.8rem, 15vw, 4.2rem); }
     }
   </style>
 </head>
 
 <body>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#">Ryota Karube</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#service">Service</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
   <header>
-    <div class="container">
-      <h1>Ryota Karube</h1>
-      <div class="subtitle">
-        Second-year Ph.D. student, University of Tsukuba<br>
-        Urban Climate · Urban Meteorology · GIScience · Digital Twin
+    <div class="container hero">
+      <div>
+        <div class="eyebrow">Urban Climate · Urban Meteorology · GIScience</div>
+        <h1>Ryota<br>Karube</h1>
+
+        <div class="roles">
+          <div class="role">
+            <span class="role-dot"></span>
+            <div>
+              <strong>Ph.D. Student</strong>
+              <span>University of Tsukuba · Doctoral Program in Geosciences</span>
+            </div>
+          </div>
+          <div class="role">
+            <span class="role-dot"></span>
+            <div>
+              <strong>Research Intern</strong>
+              <span>GATE Institute, Sofia University “St. Kliment Ohridski”</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="hero-intro">
+          I study urban thermal environments across scales, combining high-resolution atmospheric modelling
+          with geospatial analysis to better understand heat exposure and urban climate processes.
+        </p>
       </div>
-      <div class="links">
-        <a href="https://orcid.org/0000-0002-1142-3768" target="_blank" rel="noopener noreferrer">ORCID</a>
-        <a href="https://www.linkedin.com/in/ryota-karube/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://x.com/ryota_karube" target="_blank" rel="noopener noreferrer">X / Twitter</a>
-      </div>
+
+      <aside class="profile-card">
+        <h2>Research Focus</h2>
+        <p>
+          High-resolution urban climate modelling, WRF–City-LES downscaling,
+          heat-risk assessment, and geospatial data for urban thermal environment analysis.
+        </p>
+        <div class="profile-links">
+          <a href="https://orcid.org/0000-0002-1142-3768" target="_blank" rel="noopener noreferrer">ORCID</a>
+          <a href="https://researchmap.jp/ryota_karube" target="_blank" rel="noopener noreferrer">researchmap</a>
+          <a href="https://www.linkedin.com/in/ryota-karube/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://x.com/ryota_karube" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+        </div>
+      </aside>
     </div>
   </header>
 
   <main class="container">
-    <section>
-      <h2>About</h2>
+    <section id="about">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Profile</div>
+          <h2>About</h2>
+        </div>
+      </div>
       <p>
-        I am a second-year Ph.D. student in the Doctoral Program in Geosciences at the University of Tsukuba,
-        working on urban climate, urban meteorology, and geospatial information science.
-        My current research focuses on enriching urban digital twins through high-resolution urban climate
-        simulations for heat-risk assessment and the optimization of heat adaptation strategies.
+        I am a Ph.D. student in the Doctoral Program in Geosciences at the University of Tsukuba
+        and a research intern at the GATE Institute, Sofia University.
+        My research focuses on urban climate, urban meteorology, and geospatial information science,
+        with particular emphasis on high-resolution urban climate modelling, heat-risk assessment,
+        and the use of geospatial data for urban thermal environment analysis.
       </p>
     </section>
 
-    <section>
-      <h2>Research Interests</h2>
-      <span class="tag">Urban Climate</span>
-      <span class="tag">Urban Meteorology</span>
-      <span class="tag">GIScience</span>
-      <span class="tag">Digital Twin</span>
-      <span class="tag">Heat Mitigation</span>
-      <span class="tag">Local Climate Zones</span>
-      <span class="tag">Meteorological Observation</span>
-      <span class="tag">Boundary-Layer Meteorology</span>
-      <span class="tag">Biometeorology</span>
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <div class="item">
-        <h3>Ph.D. in Science</h3>
-        <div class="meta">University of Tsukuba, Apr. 2025 – Mar. 2028 expected</div>
-        <p>
-          Topic: Enrichment of Urban Digital Twin through Urban Climate Model Simulations
-          for Heat Risk Assessment and Optimization of Heat Adaptation Strategies.
-        </p>
-      </div>
-      <div class="item">
-        <h3>Master of Science</h3>
-        <div class="meta">University of Tsukuba, Mar. 2024</div>
-        <p>Master’s thesis: Validation of the microclimate model ENVI-met.</p>
-      </div>
-      <div class="item">
-        <h3>Bachelor of Science</h3>
-        <div class="meta">University of Tsukuba, Mar. 2022</div>
-        <p>Graduation thesis: Assessment of heat mitigation strategies at city-block scale in Tokyo.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Research Experience</h2>
-      <div class="grid">
+    <section id="research">
+      <div class="section-head">
         <div>
+          <div class="section-kicker">Research</div>
+          <h2>Research Interests</h2>
+        </div>
+      </div>
+
+      <div class="research-grid">
+        <div class="research-card">
+          <h3>Urban Climate & Meteorology</h3>
+          <p>Urban thermal environments, boundary-layer processes, heat mitigation, and biometeorology.</p>
+        </div>
+        <div class="research-card">
+          <h3>High-Resolution Modelling</h3>
+          <p>WRF, City-LES, ENVI-met, and PALM for multi-scale urban atmospheric simulations.</p>
+        </div>
+        <div class="research-card">
+          <h3>GIScience</h3>
+          <p>Geospatial data, urban morphology, spatial analysis, and digital-twin applications.</p>
+        </div>
+      </div>
+
+      <div class="tags">
+        <span class="tag">Urban Climate</span>
+        <span class="tag">Urban Meteorology</span>
+        <span class="tag">GIScience</span>
+        <span class="tag">Digital Twin</span>
+        <span class="tag">Heat Mitigation</span>
+        <span class="tag">Local Climate Zones</span>
+        <span class="tag">Meteorological Observation</span>
+        <span class="tag">Boundary-Layer Meteorology</span>
+        <span class="tag">Biometeorology</span>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Selected Work</div>
+          <h2>Publications</h2>
+        </div>
+        <a href="https://researchmap.jp/ryota_karube" target="_blank" rel="noopener noreferrer">Full record on researchmap →</a>
+      </div>
+
+      <article class="publication">
+        <div class="pub-title">WRF–City–LES Modelling of the Urban Thermal Environment in Sofia</div>
+        <div class="pub-authors"><strong>Karube, R.</strong>, Vitanova, L. L., Shirinyan, E., Sato, T., Petrova-Antonova, D., and Kusaka, H. (2026)</div>
+        <div class="pub-journal"><em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, L-4/W3-2026, 67–74.</div>
+        <div class="pub-actions"><a class="button-link" href="https://doi.org/10.5194/isprs-archives-L-4-W3-2026-67-2026" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
+      </article>
+
+      <article class="publication">
+        <div class="pub-title">Evaluating High-Resolution Geospatial Data for Urban Microclimate Simulations: A Comparative Study Using Official Local and Open Global Datasets in Sofia</div>
+        <div class="pub-authors">Vitanova, L. L., Fujiwara, K., <strong>Karube, R.</strong>, Shirinyan, E., Azegami, Y., Doan, Q.-V., Kusaka, H., Petrova-Antonova, D., and Ilieva, S. (2026)</div>
+        <div class="pub-journal"><em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, L-4/W2-2026, 245–252.</div>
+        <div class="pub-actions"><a class="button-link" href="https://doi.org/10.5194/isprs-archives-L-4-W2-2026-245-2026" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
+      </article>
+
+      <article class="publication">
+        <div class="pub-title">Future Building Energy Atlas of Sofia City</div>
+        <div class="pub-authors">Vitanova, L. L., Pavlov, D., Trendafilova, T. K., <strong>Karube, R.</strong>, Nakamura, K., Zabuska, A., Doan, Q.-V., Petrova-Antonova, D., and Ilieva, S. (2026)</div>
+        <div class="pub-journal"><em>ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, XII-4/W2-2026, 211–218.</div>
+        <div class="pub-actions"><a class="button-link" href="https://doi.org/10.5194/isprs-annals-XII-4-W2-2026-211-2026" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Talks</div>
+          <h2>Selected Presentations</h2>
+        </div>
+      </div>
+
+      <div class="presentation">
+        <strong>WRF–City–LES Modelling of the Urban Thermal Environment in Sofia</strong><br>
+        <span class="meta">10th International Conference on Smart Data and Smart Cities (SDSC) · Sep. 30, 2026</span>
+      </div>
+      <div class="presentation">
+        <strong>WRF–City-LESによるブルガリア・ソフィア市の都市熱環境シミュレーション</strong><br>
+        <span class="meta">38th Summer Seminar of the Meteorological Society of Japan · Sep. 5, 2026</span>
+      </div>
+      <div class="presentation">
+        <strong>高解像度力学的ダウンスケーリングによるソフィアの都市熱環境評価</strong><br>
+        <span class="meta">5th Symposium on Urban Extreme Weather · Sep. 1, 2026</span>
+      </div>
+      <div class="presentation">
+        <strong>ソフィアの都市熱環境評価のための高解像度力学的ダウンスケーリングフレームワーク</strong><br>
+        <span class="meta">21st Annual Meeting of the Heat Island Institute International · Aug. 30, 2026</span>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Background</div>
+          <h2>Research Experience</h2>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
           <h3>Research Intern</h3>
           <div class="meta">GATE Institute, Sofia University · Jul. 2025 – present</div>
-          <p>Urban climate modelling and digital twin applications for Sofia, Bulgaria.</p>
+          <p>Urban climate modelling and digital-twin applications for Sofia, Bulgaria.</p>
         </div>
-        <div>
-          <h3>Graduate Research Assistant</h3>
+        <div class="timeline-item">
+          <h3>Research Assistant</h3>
           <div class="meta">Center for Computational Sciences, University of Tsukuba · Apr. 2025 – present</div>
           <p>Large-eddy simulation, urban airflow, heat-risk atlas development, and meteorological data management.</p>
         </div>
@@ -206,92 +654,141 @@
     </section>
 
     <section>
-      <h2>Selected Publications</h2>
-      <div class="item">
-        <p>
-          <strong>Karube, R.</strong>, L. L. Vitanova, E. Shirinyan, T. Sato,
-          D. Petrova-Antonova, and H. Kusaka, 2026:
-          WRF–City-LES Modelling of the Urban Thermal Environment in Sofia.
-          <em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, accepted.
-        </p>
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Education</div>
+          <h2>Academic Background</h2>
+        </div>
       </div>
-      <div class="item">
-        <p>
-          Vitanova, L. L., K. Fujiwara, <strong>R. Karube</strong>, E. Shirinyan,
-          Y. Azegami, Q.-V. Doan, H. Kusaka, D. Petrova-Antonova, and S. Ilieva, 2026:
-          Evaluating High-Resolution Geospatial Data for Urban Microclimate Simulations.
-          <em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, accepted.
-        </p>
-      </div>
-      <div class="item">
-        <p>
-          Vitanova, L. L., D. Pavlov, T. Trendafilova, <strong>R. Karube</strong>,
-          K. Nakamura, A. Zabuska, Q.-V. Doan, D. Petrova-Antonova, and S. Ilieva, 2026:
-          Future Building Energy Atlas of Sofia City.
-          <em>ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, accepted.
-        </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Ph.D. in Science</h3>
+          <div class="meta">University of Tsukuba · Apr. 2025 – Mar. 2028 expected</div>
+          <p>Doctoral Program in Geosciences.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Master of Science</h3>
+          <div class="meta">University of Tsukuba · Apr. 2022 – Mar. 2024</div>
+          <p>Master’s thesis: Validation of the microclimate model ENVI-met.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Bachelor of Science</h3>
+          <div class="meta">University of Tsukuba · Apr. 2018 – Mar. 2022</div>
+          <p>Graduation thesis: Assessment of heat mitigation strategies at city-block scale in Tokyo.</p>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>Awards and Fellowships</h2>
-      <ul>
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Recognition</div>
+          <h2>Awards & Fellowships</h2>
+        </div>
+      </div>
+      <ul class="clean">
         <li>JST SPRING Fellowship, Apr. 2025 – Mar. 2028</li>
         <li>Student Contest Best Presentation Award, Japanese Society of Biometeorology, 2023</li>
         <li>MEIKEIKAI Award, University of Tsukuba, 2022</li>
-        <li>CSIS DAYS 2021 Joint Research Presentation Excellence Award, 2021</li>
+        <li>Vice President's Special Recognition, University of Tsukuba, 2021</li>
+        <li>CSIS DAYS 2021 Excellence Award, Center for Spatial Information Science, The University of Tokyo, 2021</li>
+      </ul>
+    </section>
+
+    <section id="service">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Service</div>
+          <h2>Academic & University Service</h2>
+        </div>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-card">
+          <h3>Council Member, Education and Research Council</h3>
+          <p>University of Tsukuba · May 2026 – Mar. 2027</p>
+        </div>
+        <div class="mini-card">
+          <h3>Executive Committee Chair</h3>
+          <p>38th Summer Seminar of the Meteorological Society of Japan · Sep. 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Engagement</div>
+          <h2>Outreach & Education</h2>
+        </div>
+      </div>
+      <p class="muted">
+        I contribute to science education and outreach through lectures, research mentoring,
+        hands-on meteorological activities, and science communication programs for students and the public.
+      </p>
+      <ul class="clean">
+        <li>Lecturer and research mentor, Tsukuba SKIP Academy, 2024–2026</li>
+        <li>Facilitator, University of Tsukuba & Kanazawa University Student Exchange, 2026</li>
+        <li>Science outreach contributor, Kids' University, University of Tsukuba, 2025–2026</li>
+        <li>Guest lecturer on weather and urban heat, Tsukuba City elementary school, 2025</li>
+        <li>Speaker, Science Café by GFEST alumni, University of Tsukuba, 2025</li>
       </ul>
     </section>
 
     <section>
-      <h2>Skills</h2>
-      <div class="grid">
+      <div class="section-head">
         <div>
+          <div class="section-kicker">Tools</div>
+          <h2>Skills</h2>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
           <h3>GIS</h3>
           <p>ArcGIS Pro, ArcMap, QGIS</p>
         </div>
-        <div>
+        <div class="skill-card">
           <h3>Meteorological Modelling</h3>
-          <p>ENVI-met, City-LES, PALM, WRF</p>
+          <p>WRF, City-LES, ENVI-met, PALM</p>
         </div>
-        <div>
+        <div class="skill-card">
           <h3>Programming</h3>
           <p>Python, Fortran, Shell Scripting</p>
-        </div>
-        <div>
-          <h3>Other</h3>
-          <p>LaTeX, GMT</p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Mt. Tsukuba Project</h2>
-      <p>
-        Current meteorological observation summary from the Mt. Tsukuba Project.
-      </p>
-      <iframe
-        src="https://www.geoenv.tsukuba.ac.jp/~kusakaken/mt-tsukuba/summary_utf8.html">
-      </iframe>
-      <p>
-        <a href="https://www.geoenv.tsukuba.ac.jp/~kusakaken/mt-tsukuba/summary_utf8.html"
-           target="_blank" rel="noopener noreferrer">
-          Open the original page
-        </a>
-      </p>
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Observation</div>
+          <h2>Mt. Tsukuba Project</h2>
+        </div>
+      </div>
+      <p class="muted">Current meteorological observation summary from the Mt. Tsukuba Project.</p>
+      <iframe src="https://www.geoenv.tsukuba.ac.jp/~kusakaken/mt-tsukuba/summary_utf8.html" title="Mt. Tsukuba Project observation summary"></iframe>
+      <p><a href="https://www.geoenv.tsukuba.ac.jp/~kusakaken/mt-tsukuba/summary_utf8.html" target="_blank" rel="noopener noreferrer">Open the original page →</a></p>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>
-        Email: karube.ryota.aw [at] alumni.tsukuba.ac.jp<br>
-        Please replace [at] with @.
-      </p>
+    <section id="contact">
+      <div class="contact-box">
+        <div>
+          <div class="section-kicker">Contact</div>
+          <h2>Get in touch</h2>
+          <p class="muted">Academic collaboration and research enquiries are welcome.</p>
+        </div>
+        <div>
+          <strong>karube.ryota.aw [at] alumni.tsukuba.ac.jp</strong><br>
+          <span class="meta">Please replace [at] with @.</span>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    Last updated: July 2026
+    © 2026 Ryota Karube · Last updated October 2026
   </footer>
 </body>
 </html>
